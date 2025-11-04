@@ -9,14 +9,16 @@ public class HorizontalSliderTest extends BaseTest {
 
     @Test
     public void sliderShouldReachGivenValue() {
+        String expectedValue = "3.5";
+
         HorizontalSliderPage page = new HorizontalSliderPage(driver)
                 .open()
-                .setValue(3.5);
+                .setValue(Double.valueOf(expectedValue));
 
         Assert.assertEquals(
                 page.getValue(),
-                "3.0",
-                "Слайдер мав показати значення 3.0"
+                expectedValue,
+                "Слайдер мав показати значення " + expectedValue
         );
     }
 }
